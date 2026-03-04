@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_subnet" "subnetByTFE" {
   vpc_id     = var.subnetTuple[2]["name"]
-  cidr_block = "10.0.16.0/24"
+  cidr_block = "10.0.0.0/16"
 
   tags = {
     environment = var.subnetTuple[2]["env"]
