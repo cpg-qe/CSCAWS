@@ -1,104 +1,39 @@
+variable "access_key" {
+  type      = string
+  sensitive = true
+}
+ 
+variable "secret_key" {
+  type      = string
+  sensitive = true
+}
+ 
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
+ 
+variable "environment" {
+  type    = string
+  default = "dev"
+}
+ 
 variable "ami" {
-  default = {
-    ami1 : "ami-0022c770"
-    "ami2" = "ami-091a4b02cd4159607"
-  }
-  type    = map
+  type    = string
+  default = "ami-0c55b159cbfafe1f0"
 }
-
+ 
 variable "instance_type" {
-  type = tuple([bool, map(string)])
-  default = [true, {
-    type1 = "m1.small"
-    "type2"   = "t2.micro",
-    type3 : "m1.medium"
-  }]
+  type    = string
+  default = "t2.micro"
 }
-
-
-
-variable "boolType" {
- type        = bool
- default     =  false
- description = "bool type"
-}
-
-variable "numberType" {
- type        = number
- default     =  0
- description = "number type"
-}
-
-
-variable "anyvar" {
-	type = any
-	default = [
-	"a",
-	"b", "a"]
-}
-
-variable "imageset" {
-	type = set(string)
-	default = [
-	"image 1",
-	"image 2", "image 3"]
-}
-
-variable "listType" {
- type        = list
-  default     = ["t2.micro", #comment
- 					"m1.small" // comment ..,
-           ]
- description = "Instance types for the EC2 instance"
- /*
-	multiline 
-	* comment
- */
-}
-
-variable "subnetTuple" {
- type = tuple([bool, bool, object({
-   name = string
-   env  = string,
-   isAvailable = bool
- })
- ])
- /***
- comment
- commment
- */
- default = [false, true,{
-   name : "vpc-046d9499fabb0b219"
-   //commment .......,
-   env  : "Dev",
-   isAvailable : true
- }]
- description = "Subnet ID for network interface"
-}
-
-variable "mapvar" {
-    default =                         {
-	  "name" : "cpgnic"
-	  duration = 958,
-	  count = 45
-  }
-  type = map  (string)
-  description = "mapppp type"
-}
-
  
+variable "nic_name" {
+  type    = string
+  default = "my-nic"
+}
  
-variable "objectVar" {
- default = {
-   name = "My Vm Instance"
-   //commment .......,
-   env  = "Dev",
-   isAvailable = true
- }
- type = object({
-   name = string
-   env  = string,
-   isAvailable = bool
- })
- description = "Tags for the EC2 instance"
+variable "instance_name" {
+  type    = string
+  default = "my-ec2"
 }
