@@ -24,6 +24,10 @@ variable "vpc_cidr" {
 variable "subnet_number" {
   type = number
 }
+variable "subnet_cidr" {
+  type    = string
+  default = ""
+}
 
 variable "ami" {
   type = string
