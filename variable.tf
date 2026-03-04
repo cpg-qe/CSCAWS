@@ -4,11 +4,13 @@ variable "region" {
 }
 
 variable "access_key" {
-  type = string
+  type      = string
+  sensitive = true
 }
 
 variable "secret_key" {
-  type = string
+  type      = string
+  sensitive = true
 }
 
 variable "vpc_id" {
@@ -16,9 +18,14 @@ variable "vpc_id" {
   default = "vpc-046d9499fabb0b219"
 }
 
-variable "subnet_cidr" {
+variable "vpc_cidr" {
   type    = string
-  default = "10.0.50.0/24"
+  default = "10.0.0.0/16"
+}
+
+variable "subnet_number" {
+  type    = number
+  default = 120
 }
 
 variable "ami" {
