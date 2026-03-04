@@ -3,13 +3,14 @@ data "aws_vpc" "existing_vpc" {
   id = var.vpc_id
 }
 
-# Subnet
+# Create subnet automatically
 resource "aws_subnet" "subnetByTFE" {
-  vpc_id     = data.aws_vpc.existing_vpc.id
-  cidr_block = var.subnet_cidr
+  vpc_id = data.aws_vpc.existing_vpc.id
+
+  cidr_block = cidrsubnet(var.vpc_cidr, 8, var.subnet_number)
 
   tags = {
-    Name        = "subnet-by-tfe"
+    Name        = "terraform-subnet"
     environment = var.environment
   }
 }
