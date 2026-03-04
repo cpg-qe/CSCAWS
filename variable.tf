@@ -1,7 +1,7 @@
 variable "ami" {
   default = {
     ami1 : "ami-0022c770"
-    "ami2" = "ami-0022f774911c1d690"
+    "ami2" = "ami-091a4b02cd4159607"
   }
   type    = map
 }
@@ -68,7 +68,7 @@ variable "subnetTuple" {
  commment
  */
  default = [false, true,{
-   name : "vpc-0163eb001426736ac"
+   name : "vpc-046d9499fabb0b219"
    //commment .......,
    env  : "Dev",
    isAvailable : true
