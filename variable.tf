@@ -14,36 +14,29 @@ variable "secret_key" {
 }
 
 variable "vpc_id" {
-  type    = string
-  default = "vpc-046d9499fabb0b219"
+  type = string
 }
 
 variable "vpc_cidr" {
-  type    = string
-  default = "10.0.0.0/16"
+  type = string
 }
 
 variable "subnet_number" {
-  type    = number
-  default = 120
+  type = number
 }
 
 variable "ami" {
-  type    = string
-  default = "ami-0c02fb55956c7d316"
+  type = string
 }
 
 variable "instance_type" {
-  type    = string
-  default = "t2.micro"
+  type = string
 }
 
 variable "instance_name" {
-  type    = string
-  default = "terraform-ec2"
+  type = string
 }
 
 variable "environment" {
-  type    = string
-  default = "dev"
+  type = string
 }
