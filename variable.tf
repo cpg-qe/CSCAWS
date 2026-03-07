@@ -33,7 +33,7 @@ variable "subnet_cidr" {
 
 variable "ami" {
   type = string
-  
+  default = "ami-0c02fb55956c7d316"
 }
 
 variable "instance_type" {
@@ -43,8 +43,10 @@ variable "instance_type" {
 
 variable "instance_name" {
   type = string
+  default = "terraform-ec2"
 }
 
 variable "environment" {
   type = string
+  default = "dev"
 }
