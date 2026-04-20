@@ -32,7 +32,7 @@ variable "subnet_cidr" {
   default = ""
 }
 
-variable "ami1" {
+variable "ami" {
   type = string
   default = "ami-0c02fb55956c7d316"
 }
